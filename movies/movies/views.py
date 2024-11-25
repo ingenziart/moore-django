@@ -24,3 +24,14 @@ def add(request):
         return HttpResponseRedirect("/movies")
 
     return render(request, "movies/add.html")
+
+
+def famos(request):
+    title = request.POST.get("title")
+    year = request.POST.get("year")
+    if title and year:
+        movie = Movie(title=title, year=year)
+        movie.save()
+        HttpResponseRedirect("/movies")
+
+    return render(request, "movies/famos.html")
