@@ -23,4 +23,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("movies/", views.movie),
     path("movies/<int:id>", views.details),
+    path("movies/add", views.add),
 ]
